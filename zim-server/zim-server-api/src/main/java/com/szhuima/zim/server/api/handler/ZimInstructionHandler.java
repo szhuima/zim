@@ -1,6 +1,6 @@
 package com.szhuima.zim.server.api.handler;
 
-import com.szhuima.zim.server.api.domain.instruction.ZimInstruction;
+import com.szhuima.zim.api.domain.instruction.ZimInstruction;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 

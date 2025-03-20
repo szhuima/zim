@@ -5,19 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.szhuima</groupId>
-        <artifactId>zim</artifactId>
+        <artifactId>zim-transporter</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>zim-common</artifactId>
-    <version>${revision}</version>
+    <artifactId>zim-transporter-server</artifactId>
+
 
     <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
     </dependencies>
 
 </project>

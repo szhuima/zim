@@ -7,17 +7,23 @@
         <groupId>com.szhuima</groupId>
         <artifactId>zim</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>zim-common</artifactId>
+    <artifactId>zim-transporter</artifactId>
     <version>${revision}</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>zim-transporter-server</module>
+        <module>zim-transporter-client</module>
+    </modules>
 
     <dependencies>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
+            <groupId>com.szhuima</groupId>
+            <artifactId>zim-api</artifactId>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
+
 
 </project>

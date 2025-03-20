@@ -1,4 +1,4 @@
-package com.szhuima.zim.server.api.domain.msg;
+package com.szhuima.zim.api.domain.msg;
 
 import java.util.Date;
 
@@ -16,15 +16,15 @@ public class ZimMsg {
 
     private String content;
 
-    private MsgContentType contentType;
+    private ContentType contentType;
 
     private MsgStatus status;
 
-    private String msgFrom;
+    private String from;
 
-    private String msgTo;
+    private String to;
 
-    private Date sendTime;
+    private Long sendTime;
 
 
     public Long getMsgId() {
@@ -51,11 +51,11 @@ public class ZimMsg {
         this.content = content;
     }
 
-    public MsgContentType getContentType() {
+    public ContentType getContentType() {
         return contentType;
     }
 
-    public void setContentType(MsgContentType contentType) {
+    public void setContentType(ContentType contentType) {
         this.contentType = contentType;
     }
 
@@ -67,27 +67,27 @@ public class ZimMsg {
         this.status = status;
     }
 
-    public String getMsgFrom() {
-        return msgFrom;
+    public String getFrom() {
+        return from;
     }
 
-    public void setMsgFrom(String msgFrom) {
-        this.msgFrom = msgFrom;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
-    public String getMsgTo() {
-        return msgTo;
+    public String getTo() {
+        return to;
     }
 
-    public void setMsgTo(String msgTo) {
-        this.msgTo = msgTo;
+    public void setTo(String to) {
+        this.to = to;
     }
 
-    public Date getSendTime() {
+    public Long getSendTime() {
         return sendTime;
     }
 
-    public void setSendTime(Date sendTime) {
+    public void setSendTime(Long sendTime) {
         this.sendTime = sendTime;
     }
 }

@@ -1,4 +1,4 @@
-package com.szhuima.zim.server.api.domain.msg;
+package com.szhuima.zim.api.domain.msg;
 
 /**
  * * @Author: szhuima

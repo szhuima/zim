@@ -1,4 +1,4 @@
-package com.szhuima.zim.server.api.domain.msg;
+package com.szhuima.zim.api.domain.msg;
 
 /**
  * * @Author: szhuima
@@ -10,7 +10,7 @@ public enum MsgStatus {
     /**
      * 消息已送达
      */
-    DELIVERED,
+    RECEIVED,
 
     /**
      * 消息已读
@@ -26,8 +26,6 @@ public enum MsgStatus {
      * 消息发送失败
      */
     SENT_FAIL;
-
-
 
 
 }

@@ -1,4 +1,4 @@
-package com.szhuima.zim.server.api.domain.instruction;
+package com.szhuima.zim.api.domain.instruction;
 
 /**
  * * @Author: szhuima
@@ -8,11 +8,11 @@ package com.szhuima.zim.server.api.domain.instruction;
 public enum InstructionType {
 
     /**
-     * 已读
+     * 已读消息指令
      */
     READ,
     /**
-     * 撤回
+     * 撤回消息指令
      */
     RECALL
 }

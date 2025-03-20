@@ -1,4 +1,4 @@
-package com.szhuima.zim.server.api.domain.instruction;
+package com.szhuima.zim.api.domain.instruction;
 
 /** 指令
  * * @Author: szhuima
