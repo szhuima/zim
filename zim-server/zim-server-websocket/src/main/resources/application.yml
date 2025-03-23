@@ -4,3 +4,13 @@ spring:
 
   main:
     web-application-type: none
+
+grpc:
+  server:
+    port: 7763
+
+websocket:
+  port: 8899
+logging:
+  level:
+    root: info

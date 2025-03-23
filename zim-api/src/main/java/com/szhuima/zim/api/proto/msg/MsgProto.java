@@ -384,6 +384,147 @@ public final class MsgProto {
     // @@protoc_insertion_point(enum_scope:MsgStatus)
   }
 
+  /**
+   * Protobuf enum {@code ResponseCode}
+   */
+  public enum ResponseCode
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     *已发出
+     * </pre>
+     *
+     * <code>FLUSHED = 0;</code>
+     */
+    FLUSHED(0),
+    /**
+     * <pre>
+     *已收到ACK
+     * </pre>
+     *
+     * <code>ACKED = 1;</code>
+     */
+    ACKED(1),
+    /**
+     * <pre>
+     *没有连接
+     * </pre>
+     *
+     * <code>NO_CONNECTION = 2;</code>
+     */
+    NO_CONNECTION(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     *已发出
+     * </pre>
+     *
+     * <code>FLUSHED = 0;</code>
+     */
+    public static final int FLUSHED_VALUE = 0;
+    /**
+     * <pre>
+     *已收到ACK
+     * </pre>
+     *
+     * <code>ACKED = 1;</code>
+     */
+    public static final int ACKED_VALUE = 1;
+    /**
+     * <pre>
+     *没有连接
+     * </pre>
+     *
+     * <code>NO_CONNECTION = 2;</code>
+     */
+    public static final int NO_CONNECTION_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResponseCode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ResponseCode forNumber(int value) {
+      switch (value) {
+        case 0: return FLUSHED;
+        case 1: return ACKED;
+        case 2: return NO_CONNECTION;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ResponseCode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ResponseCode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ResponseCode>() {
+            public ResponseCode findValueByNumber(int number) {
+              return ResponseCode.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.szhuima.zim.api.proto.msg.MsgProto.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final ResponseCode[] VALUES = values();
+
+    public static ResponseCode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ResponseCode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ResponseCode)
+  }
+
   public interface MsgRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:MsgRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -1698,7 +1839,18 @@ public final class MsgProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 msgId = 1;</code>
+     * <code>.ResponseCode code = 1;</code>
+     * @return The enum numeric value on the wire for code.
+     */
+    int getCodeValue();
+    /**
+     * <code>.ResponseCode code = 1;</code>
+     * @return The code.
+     */
+    com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode getCode();
+
+    /**
+     * <code>int64 msgId = 2;</code>
      * @return The msgId.
      */
     long getMsgId();
@@ -1716,6 +1868,7 @@ public final class MsgProto {
       super(builder);
     }
     private MsgResponse() {
+      code_ = 0;
     }
 
     @java.lang.Override
@@ -1738,10 +1891,28 @@ public final class MsgProto {
               com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.class, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.Builder.class);
     }
 
-    public static final int MSGID_FIELD_NUMBER = 1;
+    public static final int CODE_FIELD_NUMBER = 1;
+    private int code_ = 0;
+    /**
+     * <code>.ResponseCode code = 1;</code>
+     * @return The enum numeric value on the wire for code.
+     */
+    @java.lang.Override public int getCodeValue() {
+      return code_;
+    }
+    /**
+     * <code>.ResponseCode code = 1;</code>
+     * @return The code.
+     */
+    @java.lang.Override public com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode getCode() {
+      com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode result = com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode.forNumber(code_);
+      return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode.UNRECOGNIZED : result;
+    }
+
+    public static final int MSGID_FIELD_NUMBER = 2;
     private long msgId_ = 0L;
     /**
-     * <code>int64 msgId = 1;</code>
+     * <code>int64 msgId = 2;</code>
      * @return The msgId.
      */
     @java.lang.Override
@@ -1763,8 +1934,11 @@ public final class MsgProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (code_ != com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode.FLUSHED.getNumber()) {
+        output.writeEnum(1, code_);
+      }
       if (msgId_ != 0L) {
-        output.writeInt64(1, msgId_);
+        output.writeInt64(2, msgId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1775,9 +1949,13 @@ public final class MsgProto {
       if (size != -1) return size;
 
       size = 0;
+      if (code_ != com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode.FLUSHED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, code_);
+      }
       if (msgId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, msgId_);
+          .computeInt64Size(2, msgId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1794,6 +1972,7 @@ public final class MsgProto {
       }
       com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse other = (com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse) obj;
 
+      if (code_ != other.code_) return false;
       if (getMsgId()
           != other.getMsgId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1807,6 +1986,8 @@ public final class MsgProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + code_;
       hash = (37 * hash) + MSGID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgId());
@@ -1941,6 +2122,7 @@ public final class MsgProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        code_ = 0;
         msgId_ = 0L;
         return this;
       }
@@ -1976,6 +2158,9 @@ public final class MsgProto {
       private void buildPartial0(com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.code_ = code_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.msgId_ = msgId_;
         }
       }
@@ -2024,6 +2209,9 @@ public final class MsgProto {
 
       public Builder mergeFrom(com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse other) {
         if (other == com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.getDefaultInstance()) return this;
+        if (other.code_ != 0) {
+          setCodeValue(other.getCodeValue());
+        }
         if (other.getMsgId() != 0L) {
           setMsgId(other.getMsgId());
         }
@@ -2054,10 +2242,15 @@ public final class MsgProto {
                 done = true;
                 break;
               case 8: {
-                msgId_ = input.readInt64();
+                code_ = input.readEnum();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+              case 16: {
+                msgId_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2075,9 +2268,62 @@ public final class MsgProto {
       }
       private int bitField0_;
 
+      private int code_ = 0;
+      /**
+       * <code>.ResponseCode code = 1;</code>
+       * @return The enum numeric value on the wire for code.
+       */
+      @java.lang.Override public int getCodeValue() {
+        return code_;
+      }
+      /**
+       * <code>.ResponseCode code = 1;</code>
+       * @param value The enum numeric value on the wire for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeValue(int value) {
+        code_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ResponseCode code = 1;</code>
+       * @return The code.
+       */
+      @java.lang.Override
+      public com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode getCode() {
+        com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode result = com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode.forNumber(code_);
+        return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ResponseCode code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(com.szhuima.zim.api.proto.msg.MsgProto.ResponseCode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        code_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ResponseCode code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        code_ = 0;
+        onChanged();
+        return this;
+      }
+
       private long msgId_ ;
       /**
-       * <code>int64 msgId = 1;</code>
+       * <code>int64 msgId = 2;</code>
        * @return The msgId.
        */
       @java.lang.Override
@@ -2085,23 +2331,23 @@ public final class MsgProto {
         return msgId_;
       }
       /**
-       * <code>int64 msgId = 1;</code>
+       * <code>int64 msgId = 2;</code>
        * @param value The msgId to set.
        * @return This builder for chaining.
        */
       public Builder setMsgId(long value) {
 
         msgId_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 msgId = 1;</code>
+       * <code>int64 msgId = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         msgId_ = 0L;
         onChanged();
         return this;
@@ -2193,16 +2439,18 @@ public final class MsgProto {
       "\003\022\031\n\007msgType\030\002 \001(\0162\010.MsgType\022\017\n\007content\030" +
       "\003 \001(\t\022!\n\013contentType\030\004 \001(\0162\014.ContentType" +
       "\022\032\n\006status\030\005 \001(\0162\n.MsgStatus\022\014\n\004from\030\006 \001" +
-      "(\t\022\n\n\002to\030\007 \001(\t\022\020\n\010sendTime\030\010 \001(\003\"\034\n\013MsgR" +
-      "esponse\022\r\n\005msgId\030\001 \001(\003*B\n\013ContentType\022\010\n" +
-      "\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\t\n\005VIDEO\020\002\022\t\n\005AUDIO\020\003" +
-      "\022\010\n\004FILE\020\004* \n\007MsgType\022\n\n\006SINGLE\020\000\022\t\n\005GRO" +
-      "UP\020\001*@\n\tMsgStatus\022\014\n\010RECEIVED\020\000\022\010\n\004READ\020" +
-      "\001\022\014\n\010RECALLED\020\002\022\r\n\tSENT_FAIL\020\0032_\n\nMsgSer" +
-      "vice\022$\n\007sendMsg\022\013.MsgRequest\032\014.MsgRespon" +
-      "se\022+\n\014sendMsgAsync\022\013.MsgRequest\032\014.MsgRes" +
-      "ponse0\001B+\n\035com.szhuima.zim.api.proto.msg" +
-      "B\010MsgProtoP\000b\006proto3"
+      "(\t\022\n\n\002to\030\007 \001(\t\022\020\n\010sendTime\030\010 \001(\003\"9\n\013MsgR" +
+      "esponse\022\033\n\004code\030\001 \001(\0162\r.ResponseCode\022\r\n\005" +
+      "msgId\030\002 \001(\003*B\n\013ContentType\022\010\n\004TEXT\020\000\022\t\n\005" +
+      "IMAGE\020\001\022\t\n\005VIDEO\020\002\022\t\n\005AUDIO\020\003\022\010\n\004FILE\020\004*" +
+      " \n\007MsgType\022\n\n\006SINGLE\020\000\022\t\n\005GROUP\020\001*@\n\tMsg" +
+      "Status\022\014\n\010RECEIVED\020\000\022\010\n\004READ\020\001\022\014\n\010RECALL" +
+      "ED\020\002\022\r\n\tSENT_FAIL\020\003*9\n\014ResponseCode\022\013\n\007F" +
+      "LUSHED\020\000\022\t\n\005ACKED\020\001\022\021\n\rNO_CONNECTION\020\0022_" +
+      "\n\nMsgService\022$\n\007sendMsg\022\013.MsgRequest\032\014.M" +
+      "sgResponse\022+\n\014sendMsgAsync\022\013.MsgRequest\032" +
+      "\014.MsgResponse0\001B+\n\035com.szhuima.zim.api.p" +
+      "roto.msgB\010MsgProtoP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2219,7 +2467,7 @@ public final class MsgProto {
     internal_static_MsgResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MsgResponse_descriptor,
-        new java.lang.String[] { "MsgId", });
+        new java.lang.String[] { "Code", "MsgId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

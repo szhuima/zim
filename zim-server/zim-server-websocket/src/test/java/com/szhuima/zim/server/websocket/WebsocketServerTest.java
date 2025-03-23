@@ -1,5 +1,6 @@
 package com.szhuima.zim.server.websocket;
 
+import com.szhuima.zim.server.websocket.server.WebsocketServer;
 import org.junit.Test;
 
 

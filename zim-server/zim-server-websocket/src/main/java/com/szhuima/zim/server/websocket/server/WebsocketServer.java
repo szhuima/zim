@@ -1,4 +1,4 @@
-package com.szhuima.zim.server.websocket;
+package com.szhuima.zim.server.websocket.server;
 
 import com.szhuima.zim.server.api.ZimServer;
 import com.szhuima.zim.server.websocket.handler.WebsocketServerInitializer;
@@ -41,7 +41,7 @@ public class WebsocketServer implements ZimServer {
 
         future.syncUninterruptibly();
 
-        future.addListener((ChannelFutureListener) future1 -> logger.info("WebSocketServer.start|Port:：{}", port));
+        future.addListener((ChannelFutureListener) future1 -> logger.info("WebSocket Server started,listening on port:：{}", port));
 
         future.channel().closeFuture().sync();
     }

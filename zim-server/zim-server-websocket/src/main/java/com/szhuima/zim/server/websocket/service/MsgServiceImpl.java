@@ -16,7 +16,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * * @Date    2025/3/23 21:23
  * * @Description
  **/
-@Service
 @GrpcService
 public class MsgServiceImpl extends MsgServiceGrpc.MsgServiceImplBase {
 
@@ -31,12 +30,24 @@ public class MsgServiceImpl extends MsgServiceGrpc.MsgServiceImplBase {
      */
     @Override
     public void sendMsg(MsgProto.MsgRequest request, StreamObserver<MsgProto.MsgResponse> responseObserver) {
+        MsgProto.MsgResponse.Builder responseBuilder = MsgProto.MsgResponse.newBuilder();
+
         String requestTo = request.getTo();
         ChannelHandlerContext channelHandlerContext = UserContext.getChannel(requestTo);
         if (channelHandlerContext == null) {
+            responseBuilder.setCode(MsgProto.ResponseCode.NO_CONNECTION);
+            responseObserver.onNext(responseBuilder.build());
+            responseObserver.onCompleted();
             return;
         }
         channelHandlerContext.writeAndFlush(request);
+
+        MsgProto.MsgResponse response = responseBuilder
+                .setMsgId(request.getMsgId())
+                .setCode(MsgProto.ResponseCode.FLUSHED)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 
     /**

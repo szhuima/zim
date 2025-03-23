@@ -5,6 +5,7 @@ package com.szhuima.zim.api.domain.instruction;
  * * @Date    2025/3/19 23:44
  * * @Description
  **/
+
 public class Instruction {
 
     private Long msgId;

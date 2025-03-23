@@ -43,8 +43,21 @@ message MsgRequest {
   int64 sendTime = 8;
 }
 
+enum ResponseCode {
+  /*已发出*/
+  FLUSHED = 0;
+  /*已收到ACK*/
+  ACKED = 1;
+
+  /*没有连接*/
+  NO_CONNECTION = 2;
+
+
+}
+
 message MsgResponse {
-  int64 msgId = 1;
+  ResponseCode code = 1;
+  int64 msgId = 2;
 }
 
 service MsgService {
