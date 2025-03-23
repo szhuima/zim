@@ -7,7 +7,6 @@ import java.util.Date;
  * * @Date    2025/3/19 23:08
  * * @Description
  **/
-
 public class ZimMsg {
 
     private Long msgId;

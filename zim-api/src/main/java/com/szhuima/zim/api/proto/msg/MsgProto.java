@@ -2,7 +2,7 @@
 // source: Msg.proto
 
 // Protobuf Java Version: 3.25.5
-package com.szhuima.zim.api.proto;
+package com.szhuima.zim.api.proto.msg;
 
 public final class MsgProto {
   private MsgProto() {}
@@ -124,7 +124,7 @@ public final class MsgProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.szhuima.zim.api.proto.MsgProto.getDescriptor().getEnumTypes().get(0);
+      return com.szhuima.zim.api.proto.msg.MsgProto.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ContentType[] VALUES = values();
@@ -232,7 +232,7 @@ public final class MsgProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.szhuima.zim.api.proto.MsgProto.getDescriptor().getEnumTypes().get(1);
+      return com.szhuima.zim.api.proto.msg.MsgProto.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final MsgType[] VALUES = values();
@@ -358,7 +358,7 @@ public final class MsgProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.szhuima.zim.api.proto.MsgProto.getDescriptor().getEnumTypes().get(2);
+      return com.szhuima.zim.api.proto.msg.MsgProto.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final MsgStatus[] VALUES = values();
@@ -403,7 +403,7 @@ public final class MsgProto {
      * <code>.MsgType msgType = 2;</code>
      * @return The msgType.
      */
-    com.szhuima.zim.api.proto.MsgProto.MsgType getMsgType();
+    com.szhuima.zim.api.proto.msg.MsgProto.MsgType getMsgType();
 
     /**
      * <code>string content = 3;</code>
@@ -426,7 +426,7 @@ public final class MsgProto {
      * <code>.ContentType contentType = 4;</code>
      * @return The contentType.
      */
-    com.szhuima.zim.api.proto.MsgProto.ContentType getContentType();
+    com.szhuima.zim.api.proto.msg.MsgProto.ContentType getContentType();
 
     /**
      * <code>.MsgStatus status = 5;</code>
@@ -437,7 +437,7 @@ public final class MsgProto {
      * <code>.MsgStatus status = 5;</code>
      * @return The status.
      */
-    com.szhuima.zim.api.proto.MsgProto.MsgStatus getStatus();
+    com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus getStatus();
 
     /**
      * <code>string from = 6;</code>
@@ -499,15 +499,15 @@ public final class MsgProto {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgRequest_descriptor;
+      return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgRequest_fieldAccessorTable
+      return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.szhuima.zim.api.proto.MsgProto.MsgRequest.class, com.szhuima.zim.api.proto.MsgProto.MsgRequest.Builder.class);
+              com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.class, com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.Builder.class);
     }
 
     public static final int MSGID_FIELD_NUMBER = 1;
@@ -534,9 +534,9 @@ public final class MsgProto {
      * <code>.MsgType msgType = 2;</code>
      * @return The msgType.
      */
-    @java.lang.Override public com.szhuima.zim.api.proto.MsgProto.MsgType getMsgType() {
-      com.szhuima.zim.api.proto.MsgProto.MsgType result = com.szhuima.zim.api.proto.MsgProto.MsgType.forNumber(msgType_);
-      return result == null ? com.szhuima.zim.api.proto.MsgProto.MsgType.UNRECOGNIZED : result;
+    @java.lang.Override public com.szhuima.zim.api.proto.msg.MsgProto.MsgType getMsgType() {
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgType result = com.szhuima.zim.api.proto.msg.MsgProto.MsgType.forNumber(msgType_);
+      return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.MsgType.UNRECOGNIZED : result;
     }
 
     public static final int CONTENT_FIELD_NUMBER = 3;
@@ -591,9 +591,9 @@ public final class MsgProto {
      * <code>.ContentType contentType = 4;</code>
      * @return The contentType.
      */
-    @java.lang.Override public com.szhuima.zim.api.proto.MsgProto.ContentType getContentType() {
-      com.szhuima.zim.api.proto.MsgProto.ContentType result = com.szhuima.zim.api.proto.MsgProto.ContentType.forNumber(contentType_);
-      return result == null ? com.szhuima.zim.api.proto.MsgProto.ContentType.UNRECOGNIZED : result;
+    @java.lang.Override public com.szhuima.zim.api.proto.msg.MsgProto.ContentType getContentType() {
+      com.szhuima.zim.api.proto.msg.MsgProto.ContentType result = com.szhuima.zim.api.proto.msg.MsgProto.ContentType.forNumber(contentType_);
+      return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.ContentType.UNRECOGNIZED : result;
     }
 
     public static final int STATUS_FIELD_NUMBER = 5;
@@ -609,9 +609,9 @@ public final class MsgProto {
      * <code>.MsgStatus status = 5;</code>
      * @return The status.
      */
-    @java.lang.Override public com.szhuima.zim.api.proto.MsgProto.MsgStatus getStatus() {
-      com.szhuima.zim.api.proto.MsgProto.MsgStatus result = com.szhuima.zim.api.proto.MsgProto.MsgStatus.forNumber(status_);
-      return result == null ? com.szhuima.zim.api.proto.MsgProto.MsgStatus.UNRECOGNIZED : result;
+    @java.lang.Override public com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus getStatus() {
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus result = com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus.forNumber(status_);
+      return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus.UNRECOGNIZED : result;
     }
 
     public static final int FROM_FIELD_NUMBER = 6;
@@ -720,16 +720,16 @@ public final class MsgProto {
       if (msgId_ != 0L) {
         output.writeInt64(1, msgId_);
       }
-      if (msgType_ != com.szhuima.zim.api.proto.MsgProto.MsgType.SINGLE.getNumber()) {
+      if (msgType_ != com.szhuima.zim.api.proto.msg.MsgProto.MsgType.SINGLE.getNumber()) {
         output.writeEnum(2, msgType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
       }
-      if (contentType_ != com.szhuima.zim.api.proto.MsgProto.ContentType.TEXT.getNumber()) {
+      if (contentType_ != com.szhuima.zim.api.proto.msg.MsgProto.ContentType.TEXT.getNumber()) {
         output.writeEnum(4, contentType_);
       }
-      if (status_ != com.szhuima.zim.api.proto.MsgProto.MsgStatus.RECEIVED.getNumber()) {
+      if (status_ != com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus.RECEIVED.getNumber()) {
         output.writeEnum(5, status_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(from_)) {
@@ -754,18 +754,18 @@ public final class MsgProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, msgId_);
       }
-      if (msgType_ != com.szhuima.zim.api.proto.MsgProto.MsgType.SINGLE.getNumber()) {
+      if (msgType_ != com.szhuima.zim.api.proto.msg.MsgProto.MsgType.SINGLE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, msgType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
       }
-      if (contentType_ != com.szhuima.zim.api.proto.MsgProto.ContentType.TEXT.getNumber()) {
+      if (contentType_ != com.szhuima.zim.api.proto.msg.MsgProto.ContentType.TEXT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, contentType_);
       }
-      if (status_ != com.szhuima.zim.api.proto.MsgProto.MsgStatus.RECEIVED.getNumber()) {
+      if (status_ != com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus.RECEIVED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, status_);
       }
@@ -789,10 +789,10 @@ public final class MsgProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.szhuima.zim.api.proto.MsgProto.MsgRequest)) {
+      if (!(obj instanceof com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest)) {
         return super.equals(obj);
       }
-      com.szhuima.zim.api.proto.MsgProto.MsgRequest other = (com.szhuima.zim.api.proto.MsgProto.MsgRequest) obj;
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest other = (com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest) obj;
 
       if (getMsgId()
           != other.getMsgId()) return false;
@@ -841,44 +841,44 @@ public final class MsgProto {
       return hash;
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(byte[] data)
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(java.io.InputStream input)
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -886,26 +886,26 @@ public final class MsgProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseDelimitedFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -918,7 +918,7 @@ public final class MsgProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.szhuima.zim.api.proto.MsgProto.MsgRequest prototype) {
+    public static Builder newBuilder(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -939,21 +939,21 @@ public final class MsgProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:MsgRequest)
-        com.szhuima.zim.api.proto.MsgProto.MsgRequestOrBuilder {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgRequest_descriptor;
+        return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgRequest_fieldAccessorTable
+        return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.szhuima.zim.api.proto.MsgProto.MsgRequest.class, com.szhuima.zim.api.proto.MsgProto.MsgRequest.Builder.class);
+                com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.class, com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.Builder.class);
       }
 
-      // Construct using com.szhuima.zim.api.proto.MsgProto.MsgRequest.newBuilder()
+      // Construct using com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.newBuilder()
       private Builder() {
 
       }
@@ -981,17 +981,17 @@ public final class MsgProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgRequest_descriptor;
+        return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgRequest getDefaultInstanceForType() {
-        return com.szhuima.zim.api.proto.MsgProto.MsgRequest.getDefaultInstance();
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest getDefaultInstanceForType() {
+        return com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgRequest build() {
-        com.szhuima.zim.api.proto.MsgProto.MsgRequest result = buildPartial();
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest build() {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -999,14 +999,14 @@ public final class MsgProto {
       }
 
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgRequest buildPartial() {
-        com.szhuima.zim.api.proto.MsgProto.MsgRequest result = new com.szhuima.zim.api.proto.MsgProto.MsgRequest(this);
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest buildPartial() {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest result = new com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(com.szhuima.zim.api.proto.MsgProto.MsgRequest result) {
+      private void buildPartial0(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.msgId_ = msgId_;
@@ -1068,16 +1068,16 @@ public final class MsgProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.szhuima.zim.api.proto.MsgProto.MsgRequest) {
-          return mergeFrom((com.szhuima.zim.api.proto.MsgProto.MsgRequest)other);
+        if (other instanceof com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest) {
+          return mergeFrom((com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.szhuima.zim.api.proto.MsgProto.MsgRequest other) {
-        if (other == com.szhuima.zim.api.proto.MsgProto.MsgRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest other) {
+        if (other == com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.getDefaultInstance()) return this;
         if (other.getMsgId() != 0L) {
           setMsgId(other.getMsgId());
         }
@@ -1247,16 +1247,16 @@ public final class MsgProto {
        * @return The msgType.
        */
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgType getMsgType() {
-        com.szhuima.zim.api.proto.MsgProto.MsgType result = com.szhuima.zim.api.proto.MsgProto.MsgType.forNumber(msgType_);
-        return result == null ? com.szhuima.zim.api.proto.MsgProto.MsgType.UNRECOGNIZED : result;
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgType getMsgType() {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgType result = com.szhuima.zim.api.proto.msg.MsgProto.MsgType.forNumber(msgType_);
+        return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.MsgType.UNRECOGNIZED : result;
       }
       /**
        * <code>.MsgType msgType = 2;</code>
        * @param value The msgType to set.
        * @return This builder for chaining.
        */
-      public Builder setMsgType(com.szhuima.zim.api.proto.MsgProto.MsgType value) {
+      public Builder setMsgType(com.szhuima.zim.api.proto.msg.MsgProto.MsgType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1372,16 +1372,16 @@ public final class MsgProto {
        * @return The contentType.
        */
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.ContentType getContentType() {
-        com.szhuima.zim.api.proto.MsgProto.ContentType result = com.szhuima.zim.api.proto.MsgProto.ContentType.forNumber(contentType_);
-        return result == null ? com.szhuima.zim.api.proto.MsgProto.ContentType.UNRECOGNIZED : result;
+      public com.szhuima.zim.api.proto.msg.MsgProto.ContentType getContentType() {
+        com.szhuima.zim.api.proto.msg.MsgProto.ContentType result = com.szhuima.zim.api.proto.msg.MsgProto.ContentType.forNumber(contentType_);
+        return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.ContentType.UNRECOGNIZED : result;
       }
       /**
        * <code>.ContentType contentType = 4;</code>
        * @param value The contentType to set.
        * @return This builder for chaining.
        */
-      public Builder setContentType(com.szhuima.zim.api.proto.MsgProto.ContentType value) {
+      public Builder setContentType(com.szhuima.zim.api.proto.msg.MsgProto.ContentType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1425,16 +1425,16 @@ public final class MsgProto {
        * @return The status.
        */
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgStatus getStatus() {
-        com.szhuima.zim.api.proto.MsgProto.MsgStatus result = com.szhuima.zim.api.proto.MsgProto.MsgStatus.forNumber(status_);
-        return result == null ? com.szhuima.zim.api.proto.MsgProto.MsgStatus.UNRECOGNIZED : result;
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus getStatus() {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus result = com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus.forNumber(status_);
+        return result == null ? com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus.UNRECOGNIZED : result;
       }
       /**
        * <code>.MsgStatus status = 5;</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(com.szhuima.zim.api.proto.MsgProto.MsgStatus value) {
+      public Builder setStatus(com.szhuima.zim.api.proto.msg.MsgProto.MsgStatus value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1646,12 +1646,12 @@ public final class MsgProto {
     }
 
     // @@protoc_insertion_point(class_scope:MsgRequest)
-    private static final com.szhuima.zim.api.proto.MsgProto.MsgRequest DEFAULT_INSTANCE;
+    private static final com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.szhuima.zim.api.proto.MsgProto.MsgRequest();
+      DEFAULT_INSTANCE = new com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest();
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgRequest getDefaultInstance() {
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1687,7 +1687,7 @@ public final class MsgProto {
     }
 
     @java.lang.Override
-    public com.szhuima.zim.api.proto.MsgProto.MsgRequest getDefaultInstanceForType() {
+    public com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1727,15 +1727,15 @@ public final class MsgProto {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgResponse_descriptor;
+      return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgResponse_fieldAccessorTable
+      return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.szhuima.zim.api.proto.MsgProto.MsgResponse.class, com.szhuima.zim.api.proto.MsgProto.MsgResponse.Builder.class);
+              com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.class, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.Builder.class);
     }
 
     public static final int MSGID_FIELD_NUMBER = 1;
@@ -1789,10 +1789,10 @@ public final class MsgProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.szhuima.zim.api.proto.MsgProto.MsgResponse)) {
+      if (!(obj instanceof com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse)) {
         return super.equals(obj);
       }
-      com.szhuima.zim.api.proto.MsgProto.MsgResponse other = (com.szhuima.zim.api.proto.MsgProto.MsgResponse) obj;
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse other = (com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse) obj;
 
       if (getMsgId()
           != other.getMsgId()) return false;
@@ -1815,44 +1815,44 @@ public final class MsgProto {
       return hash;
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(byte[] data)
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(java.io.InputStream input)
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1860,26 +1860,26 @@ public final class MsgProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseDelimitedFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse parseFrom(
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1892,7 +1892,7 @@ public final class MsgProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.szhuima.zim.api.proto.MsgProto.MsgResponse prototype) {
+    public static Builder newBuilder(com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1913,21 +1913,21 @@ public final class MsgProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:MsgResponse)
-        com.szhuima.zim.api.proto.MsgProto.MsgResponseOrBuilder {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgResponse_descriptor;
+        return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgResponse_fieldAccessorTable
+        return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.szhuima.zim.api.proto.MsgProto.MsgResponse.class, com.szhuima.zim.api.proto.MsgProto.MsgResponse.Builder.class);
+                com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.class, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.Builder.class);
       }
 
-      // Construct using com.szhuima.zim.api.proto.MsgProto.MsgResponse.newBuilder()
+      // Construct using com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.newBuilder()
       private Builder() {
 
       }
@@ -1948,17 +1948,17 @@ public final class MsgProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.szhuima.zim.api.proto.MsgProto.internal_static_MsgResponse_descriptor;
+        return com.szhuima.zim.api.proto.msg.MsgProto.internal_static_MsgResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgResponse getDefaultInstanceForType() {
-        return com.szhuima.zim.api.proto.MsgProto.MsgResponse.getDefaultInstance();
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse getDefaultInstanceForType() {
+        return com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgResponse build() {
-        com.szhuima.zim.api.proto.MsgProto.MsgResponse result = buildPartial();
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse build() {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1966,14 +1966,14 @@ public final class MsgProto {
       }
 
       @java.lang.Override
-      public com.szhuima.zim.api.proto.MsgProto.MsgResponse buildPartial() {
-        com.szhuima.zim.api.proto.MsgProto.MsgResponse result = new com.szhuima.zim.api.proto.MsgProto.MsgResponse(this);
+      public com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse buildPartial() {
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse result = new com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(com.szhuima.zim.api.proto.MsgProto.MsgResponse result) {
+      private void buildPartial0(com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.msgId_ = msgId_;
@@ -2014,16 +2014,16 @@ public final class MsgProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.szhuima.zim.api.proto.MsgProto.MsgResponse) {
-          return mergeFrom((com.szhuima.zim.api.proto.MsgProto.MsgResponse)other);
+        if (other instanceof com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse) {
+          return mergeFrom((com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.szhuima.zim.api.proto.MsgProto.MsgResponse other) {
-        if (other == com.szhuima.zim.api.proto.MsgProto.MsgResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse other) {
+        if (other == com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.getDefaultInstance()) return this;
         if (other.getMsgId() != 0L) {
           setMsgId(other.getMsgId());
         }
@@ -2123,12 +2123,12 @@ public final class MsgProto {
     }
 
     // @@protoc_insertion_point(class_scope:MsgResponse)
-    private static final com.szhuima.zim.api.proto.MsgProto.MsgResponse DEFAULT_INSTANCE;
+    private static final com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.szhuima.zim.api.proto.MsgProto.MsgResponse();
+      DEFAULT_INSTANCE = new com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse();
     }
 
-    public static com.szhuima.zim.api.proto.MsgProto.MsgResponse getDefaultInstance() {
+    public static com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2164,7 +2164,7 @@ public final class MsgProto {
     }
 
     @java.lang.Override
-    public com.szhuima.zim.api.proto.MsgProto.MsgResponse getDefaultInstanceForType() {
+    public com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2198,10 +2198,11 @@ public final class MsgProto {
       "\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\t\n\005VIDEO\020\002\022\t\n\005AUDIO\020\003" +
       "\022\010\n\004FILE\020\004* \n\007MsgType\022\n\n\006SINGLE\020\000\022\t\n\005GRO" +
       "UP\020\001*@\n\tMsgStatus\022\014\n\010RECEIVED\020\000\022\010\n\004READ\020" +
-      "\001\022\014\n\010RECALLED\020\002\022\r\n\tSENT_FAIL\020\00322\n\nMsgSer" +
+      "\001\022\014\n\010RECALLED\020\002\022\r\n\tSENT_FAIL\020\0032_\n\nMsgSer" +
       "vice\022$\n\007sendMsg\022\013.MsgRequest\032\014.MsgRespon" +
-      "seB\'\n\031com.szhuima.zim.api.protoB\010MsgProt" +
-      "oP\000b\006proto3"
+      "se\022+\n\014sendMsgAsync\022\013.MsgRequest\032\014.MsgRes" +
+      "ponse0\001B+\n\035com.szhuima.zim.api.proto.msg" +
+      "B\010MsgProtoP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

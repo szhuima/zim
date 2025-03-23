@@ -8,11 +8,12 @@ package com.szhuima.zim.api.domain.instruction;
 public enum InstructionType {
 
     /**
+     * 确认收到指令
+     */
+    ACK,
+
+    /**
      * 已读消息指令
      */
-    READ,
-    /**
-     * 撤回消息指令
-     */
-    RECALL
+    R,
 }

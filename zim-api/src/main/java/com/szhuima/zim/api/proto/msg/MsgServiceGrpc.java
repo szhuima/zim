@@ -1,4 +1,4 @@
-package com.szhuima.zim.api.proto;
+package com.szhuima.zim.api.proto.msg;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -15,35 +15,66 @@ public final class MsgServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "MsgService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.MsgProto.MsgRequest,
-      com.szhuima.zim.api.proto.MsgProto.MsgResponse> getSendMsgMethod;
+  private static volatile io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest,
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> getSendMsgMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "sendMsg",
-      requestType = com.szhuima.zim.api.proto.MsgProto.MsgRequest.class,
-      responseType = com.szhuima.zim.api.proto.MsgProto.MsgResponse.class,
+      requestType = com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.class,
+      responseType = com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.MsgProto.MsgRequest,
-      com.szhuima.zim.api.proto.MsgProto.MsgResponse> getSendMsgMethod() {
-    io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.MsgProto.MsgRequest, com.szhuima.zim.api.proto.MsgProto.MsgResponse> getSendMsgMethod;
+  public static io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest,
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> getSendMsgMethod() {
+    io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> getSendMsgMethod;
     if ((getSendMsgMethod = MsgServiceGrpc.getSendMsgMethod) == null) {
       synchronized (MsgServiceGrpc.class) {
         if ((getSendMsgMethod = MsgServiceGrpc.getSendMsgMethod) == null) {
           MsgServiceGrpc.getSendMsgMethod = getSendMsgMethod =
-              io.grpc.MethodDescriptor.<com.szhuima.zim.api.proto.MsgProto.MsgRequest, com.szhuima.zim.api.proto.MsgProto.MsgResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "sendMsg"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.szhuima.zim.api.proto.MsgProto.MsgRequest.getDefaultInstance()))
+                  com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.szhuima.zim.api.proto.MsgProto.MsgResponse.getDefaultInstance()))
+                  com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MsgServiceMethodDescriptorSupplier("sendMsg"))
               .build();
         }
       }
     }
     return getSendMsgMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest,
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> getSendMsgAsyncMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "sendMsgAsync",
+      requestType = com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.class,
+      responseType = com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest,
+      com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> getSendMsgAsyncMethod() {
+    io.grpc.MethodDescriptor<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> getSendMsgAsyncMethod;
+    if ((getSendMsgAsyncMethod = MsgServiceGrpc.getSendMsgAsyncMethod) == null) {
+      synchronized (MsgServiceGrpc.class) {
+        if ((getSendMsgAsyncMethod = MsgServiceGrpc.getSendMsgAsyncMethod) == null) {
+          MsgServiceGrpc.getSendMsgAsyncMethod = getSendMsgAsyncMethod =
+              io.grpc.MethodDescriptor.<com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "sendMsgAsync"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgServiceMethodDescriptorSupplier("sendMsgAsync"))
+              .build();
+        }
+      }
+    }
+    return getSendMsgAsyncMethod;
   }
 
   /**
@@ -110,10 +141,23 @@ public final class MsgServiceGrpc {
   public interface AsyncService {
 
     /**
+     * <pre>
+     * 阻塞发送消息
+     * </pre>
      */
-    default void sendMsg(com.szhuima.zim.api.proto.MsgProto.MsgRequest request,
-        io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.MsgProto.MsgResponse> responseObserver) {
+    default void sendMsg(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request,
+        io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendMsgMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 异步发送消息
+     * </pre>
+     */
+    default void sendMsgAsync(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request,
+        io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendMsgAsyncMethod(), responseObserver);
     }
   }
 
@@ -145,11 +189,25 @@ public final class MsgServiceGrpc {
     }
 
     /**
+     * <pre>
+     * 阻塞发送消息
+     * </pre>
      */
-    public void sendMsg(com.szhuima.zim.api.proto.MsgProto.MsgRequest request,
-        io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.MsgProto.MsgResponse> responseObserver) {
+    public void sendMsg(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request,
+        io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSendMsgMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 异步发送消息
+     * </pre>
+     */
+    public void sendMsgAsync(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request,
+        io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getSendMsgAsyncMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -170,10 +228,25 @@ public final class MsgServiceGrpc {
     }
 
     /**
+     * <pre>
+     * 阻塞发送消息
+     * </pre>
      */
-    public com.szhuima.zim.api.proto.MsgProto.MsgResponse sendMsg(com.szhuima.zim.api.proto.MsgProto.MsgRequest request) {
+    public com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse sendMsg(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSendMsgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 异步发送消息
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse>
+        sendMsgAsync(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getSendMsgAsyncMethod(), getCallOptions(), request);
     }
   }
 
@@ -194,10 +267,24 @@ public final class MsgServiceGrpc {
     }
 
     /**
+     * <pre>
+     * 阻塞发送消息
+     * </pre>
      */
-    public com.szhuima.zim.api.proto.MsgProto.MsgResponse sendMsg(com.szhuima.zim.api.proto.MsgProto.MsgRequest request) {
+    public com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse sendMsg(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSendMsgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 异步发送消息
+     * </pre>
+     */
+    public java.util.Iterator<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> sendMsgAsync(
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getSendMsgAsyncMethod(), getCallOptions(), request);
     }
   }
 
@@ -218,15 +305,19 @@ public final class MsgServiceGrpc {
     }
 
     /**
+     * <pre>
+     * 阻塞发送消息
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.szhuima.zim.api.proto.MsgProto.MsgResponse> sendMsg(
-        com.szhuima.zim.api.proto.MsgProto.MsgRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> sendMsg(
+        com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSendMsgMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_SEND_MSG = 0;
+  private static final int METHODID_SEND_MSG_ASYNC = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -246,8 +337,12 @@ public final class MsgServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SEND_MSG:
-          serviceImpl.sendMsg((com.szhuima.zim.api.proto.MsgProto.MsgRequest) request,
-              (io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.MsgProto.MsgResponse>) responseObserver);
+          serviceImpl.sendMsg((com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest) request,
+              (io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse>) responseObserver);
+          break;
+        case METHODID_SEND_MSG_ASYNC:
+          serviceImpl.sendMsgAsync((com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest) request,
+              (io.grpc.stub.StreamObserver<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -271,9 +366,16 @@ public final class MsgServiceGrpc {
           getSendMsgMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.szhuima.zim.api.proto.MsgProto.MsgRequest,
-              com.szhuima.zim.api.proto.MsgProto.MsgResponse>(
+              com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest,
+              com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse>(
                 service, METHODID_SEND_MSG)))
+        .addMethod(
+          getSendMsgAsyncMethod(),
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+            new MethodHandlers<
+              com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest,
+              com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse>(
+                service, METHODID_SEND_MSG_ASYNC)))
         .build();
   }
 
@@ -283,7 +385,7 @@ public final class MsgServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.szhuima.zim.api.proto.MsgProto.getDescriptor();
+      return com.szhuima.zim.api.proto.msg.MsgProto.getDescriptor();
     }
 
     @java.lang.Override
@@ -323,6 +425,7 @@ public final class MsgServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MsgServiceFileDescriptorSupplier())
               .addMethod(getSendMsgMethod())
+              .addMethod(getSendMsgAsyncMethod())
               .build();
         }
       }

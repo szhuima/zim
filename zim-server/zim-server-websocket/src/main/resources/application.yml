@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: websocket-server
+
+  main:
+    web-application-type: none
