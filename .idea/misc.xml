@@ -131,6 +131,7 @@
         <option value="$PROJECT_DIR$/zim-cs-transport/zim-cs-transport-api/pom.xml" />
         <option value="$PROJECT_DIR$/zim-cs-transport/zim-cs-transport-grpc/pom.xml" />
         <option value="$PROJECT_DIR$/zim-cs-transport/zim-cs-transport-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/zim-transporter/pom.xml" />
         <option value="$PROJECT_DIR$/zim-transporter/zim-transporter-api/pom.xml" />
       </set>
     </option>

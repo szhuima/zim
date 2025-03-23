@@ -12,7 +12,6 @@
         <module>zim-server</module>
         <module>zim-client</module>
         <module>zim-common</module>
-        <module>zim-transporter</module>
         <module>zim-api</module>
         <module>zim-client-example</module>
     </modules>
