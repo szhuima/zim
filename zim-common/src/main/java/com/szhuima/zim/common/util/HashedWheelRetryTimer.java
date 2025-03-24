@@ -1,4 +1,4 @@
-package com.szhuima.zim.common.retry;
+package com.szhuima.zim.common.util;
 
 import io.netty.util.HashedWheelTimer;
 import io.netty.util.Timeout;
@@ -33,9 +33,10 @@ public class HashedWheelRetryTimer {
      * @param maxRetries    最大重试次数
      * @param retryInterval 重试间隔 单位：毫秒
      */
-    public void runTask(Runnable task, int maxRetries, long retryInterval) {
+    public Timeout runTask(Runnable task, int maxRetries, long retryInterval) {
         RetryTask retryTask = new RetryTask(task, maxRetries, retryInterval, timer);
-        timer.newTimeout(retryTask, 0, TimeUnit.MILLISECONDS);
+        Timeout timeout = timer.newTimeout(retryTask, 0, TimeUnit.MILLISECONDS);
+        return timeout;
     }
 
 

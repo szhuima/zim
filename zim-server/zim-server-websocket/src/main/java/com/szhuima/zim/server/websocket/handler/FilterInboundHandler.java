@@ -2,6 +2,7 @@ package com.szhuima.zim.server.websocket.handler;
 
 import com.szhuima.zim.server.websocket.context.UserContext;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
@@ -12,7 +13,7 @@ import org.springframework.util.StringUtils;
  * * @Date    2025/3/23 21:53
  * * @Description
  **/
-public class FilterChannelHandler extends SimpleChannelInboundHandler<Object> {
+public class FilterInboundHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * <strong>Please keep in mind that this method will be renamed to
@@ -26,7 +27,8 @@ public class FilterChannelHandler extends SimpleChannelInboundHandler<Object> {
      * @throws Exception is thrown if an error occurred
      */
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        // 手动将消息传递给下一个处理器
         ctx.fireChannelRead(msg);
     }
 

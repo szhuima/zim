@@ -127,7 +127,7 @@ public final class MsgServiceGrpc {
 
     /**
      * <pre>
-     * 阻塞发送消息
+     * 同步发送消息
      * </pre>
      */
     public void sendMsg(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request,
@@ -181,7 +181,7 @@ public final class MsgServiceGrpc {
 
     /**
      * <pre>
-     * 阻塞发送消息
+     * 同步发送消息
      * </pre>
      */
     public void sendMsg(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request,
@@ -218,7 +218,7 @@ public final class MsgServiceGrpc {
 
     /**
      * <pre>
-     * 阻塞发送消息
+     * 同步发送消息
      * </pre>
      */
     public com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse sendMsg(com.szhuima.zim.api.proto.msg.MsgProto.MsgRequest request) {
@@ -254,7 +254,7 @@ public final class MsgServiceGrpc {
 
     /**
      * <pre>
-     * 阻塞发送消息
+     * 同步发送消息
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.szhuima.zim.api.proto.msg.MsgProto.MsgResponse> sendMsg(

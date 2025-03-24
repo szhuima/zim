@@ -1,6 +1,7 @@
 package com.szhuima.zim.server.websocket.handler;
 
-import com.szhuima.zim.server.api.handler.ZimInstructionHandler;
+import com.szhuima.zim.server.websocket.handler.codec.MsgRequestEncoder;
+import com.szhuima.zim.server.websocket.handler.codec.WebsocketDecoder;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
@@ -35,9 +36,9 @@ public class WebsocketServerInitializer extends ChannelInitializer<SocketChannel
         pipeline.addLast(new ChunkedWriteHandler());
         pipeline.addLast(new HttpObjectAggregator(65535));
         pipeline.addLast(new MsgRequestEncoder());
-
         pipeline.addLast(new WebSocketServerProtocolHandler("/ws"));
-        pipeline.addLast(new FilterChannelHandler());
-//        pipeline.addLast(new ZimInstructionHandler());
+        pipeline.addLast(new WebsocketDecoder());
+        pipeline.addLast(new FilterInboundHandler());
+        pipeline.addLast(new InstructionInboundHandler());
     }
 }

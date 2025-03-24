@@ -2,6 +2,7 @@ package com.szhuima.zim.server.websocket.service;
 
 import com.szhuima.zim.api.proto.msg.MsgProto;
 import com.szhuima.zim.api.proto.msg.MsgServiceGrpc;
+import com.szhuima.zim.server.api.util.FlushMsgRetryUtil;
 import com.szhuima.zim.server.websocket.context.UserContext;
 import io.grpc.stub.StreamObserver;
 import io.netty.channel.ChannelHandlerContext;
@@ -33,15 +34,14 @@ public class MsgServiceImpl extends MsgServiceGrpc.MsgServiceImplBase {
         MsgProto.MsgResponse.Builder responseBuilder = MsgProto.MsgResponse.newBuilder();
 
         String requestTo = request.getTo();
-        ChannelHandlerContext channelHandlerContext = UserContext.getChannel(requestTo);
-        if (channelHandlerContext == null) {
+        ChannelHandlerContext ctx = UserContext.getChannel(requestTo);
+        if (ctx == null) {
             responseBuilder.setCode(MsgProto.ResponseCode.NO_CONNECTION);
             responseObserver.onNext(responseBuilder.build());
             responseObserver.onCompleted();
             return;
         }
-        channelHandlerContext.writeAndFlush(request);
-
+        FlushMsgRetryUtil.flushMsg(ctx,request.getMsgId(),request);
         MsgProto.MsgResponse response = responseBuilder
                 .setMsgId(request.getMsgId())
                 .setCode(MsgProto.ResponseCode.FLUSHED)
@@ -63,15 +63,15 @@ public class MsgServiceImpl extends MsgServiceGrpc.MsgServiceImplBase {
         MsgProto.MsgResponse.Builder responseBuilder = MsgProto.MsgResponse.newBuilder();
 
         String requestTo = request.getTo();
-        ChannelHandlerContext channelHandlerContext = UserContext.getChannel(requestTo);
-        if (channelHandlerContext == null) {
+        ChannelHandlerContext ctx = UserContext.getChannel(requestTo);
+        if (ctx == null) {
             responseBuilder.setCode(MsgProto.ResponseCode.NO_CONNECTION);
             responseObserver.onNext(responseBuilder.build());
             responseObserver.onCompleted();
             return;
         }
-        // todo  时间轮 重试机制 + 等待ACK
-        channelHandlerContext.writeAndFlush(request);
+
+        FlushMsgRetryUtil.flushMsg(ctx,request.getMsgId(),request);
 
         MsgProto.MsgResponse response = responseBuilder
                 .setMsgId(request.getMsgId())

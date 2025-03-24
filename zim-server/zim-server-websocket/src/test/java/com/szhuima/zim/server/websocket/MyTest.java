@@ -1,7 +1,8 @@
 package com.szhuima.zim.server.websocket;
 
-import com.szhuima.zim.common.retry.HashedWheelRetryTimer;
+import com.szhuima.zim.common.util.HashedWheelRetryTimer;
 import io.netty.util.HashedWheelTimer;
+import io.netty.util.Timeout;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -47,12 +48,18 @@ public class MyTest {
         HashedWheelTimer hashedWheelTimer = new HashedWheelTimer(1L, TimeUnit.SECONDS);
         HashedWheelRetryTimer hashedWheelRetryTimer = new HashedWheelRetryTimer(hashedWheelTimer);
 
-        hashedWheelRetryTimer.runTask(() -> {
+        Timeout timeout = hashedWheelRetryTimer.runTask(() -> {
             log.info("任务被执行了...");
-        }, 2, 2000);
+        }, 5, 2000);
+
+        TimeUnit.SECONDS.sleep(4000);
+
+        timeout.cancel();
 
         TimeUnit.SECONDS.sleep(20000);
+
     }
+
 
 
 }
