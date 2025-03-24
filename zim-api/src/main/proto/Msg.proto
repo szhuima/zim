@@ -62,7 +62,7 @@ message MsgResponse {
 
 service MsgService {
 
-  // 阻塞发送消息
+  // 同步发送消息
   rpc sendMsg (MsgRequest) returns (MsgResponse);
 
   // 异步发送消息

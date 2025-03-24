@@ -22,7 +22,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>2.7.18</spring-boot.version>
-        <fastjson_version>1.2.70</fastjson_version>
+        <fastjson_version>2.0.41</fastjson_version>
         <netty4_version>4.1.25.Final</netty4_version>
         <commons_lang3_version>3.8.1</commons_lang3_version>
         <grpc.version>1.51.0</grpc.version>
@@ -35,12 +35,13 @@
         <logback_version>1.2.2</logback_version>
         <log4j2_version>2.11.1</log4j2_version>
         <commons_io_version>2.6</commons_io_version>
+
+        <lombok.version>1.18.36</lombok.version>
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -127,6 +128,16 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
                 <version>${log4j2_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson_version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

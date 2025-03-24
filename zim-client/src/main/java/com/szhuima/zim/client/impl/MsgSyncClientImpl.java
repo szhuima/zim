@@ -1,7 +1,8 @@
-package com.szhuima.zim.client;
+package com.szhuima.zim.client.impl;
 
 import com.szhuima.zim.api.proto.msg.MsgProto;
 import com.szhuima.zim.api.proto.msg.MsgServiceGrpc;
+import com.szhuima.zim.client.MsgSyncClient;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
  * * @Description
  **/
 @Component
-public class DefaultMsgClient implements MsgClient {
+public class MsgSyncClientImpl implements MsgSyncClient {
 
     @GrpcClient(value = "grpc-server")
     private MsgServiceGrpc.MsgServiceBlockingStub messageService;

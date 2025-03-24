@@ -60,6 +60,24 @@ public class MsgServiceImpl extends MsgServiceGrpc.MsgServiceImplBase {
      */
     @Override
     public void sendMsgAsync(MsgProto.MsgRequest request, StreamObserver<MsgProto.MsgResponse> responseObserver) {
-        super.sendMsgAsync(request, responseObserver);
+        MsgProto.MsgResponse.Builder responseBuilder = MsgProto.MsgResponse.newBuilder();
+
+        String requestTo = request.getTo();
+        ChannelHandlerContext channelHandlerContext = UserContext.getChannel(requestTo);
+        if (channelHandlerContext == null) {
+            responseBuilder.setCode(MsgProto.ResponseCode.NO_CONNECTION);
+            responseObserver.onNext(responseBuilder.build());
+            responseObserver.onCompleted();
+            return;
+        }
+        // todo  时间轮 重试机制 + 等待ACK
+        channelHandlerContext.writeAndFlush(request);
+
+        MsgProto.MsgResponse response = responseBuilder
+                .setMsgId(request.getMsgId())
+                .setCode(MsgProto.ResponseCode.FLUSHED)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 }

@@ -1,10 +1,9 @@
 package com.szhuima.zim.client.example;
 
 import com.szhuima.zim.api.proto.msg.MsgProto;
-import com.szhuima.zim.client.MsgClient;
+import com.szhuima.zim.client.MsgSyncClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
@@ -17,7 +16,7 @@ import javax.annotation.Resource;
 public class MsgClientTest {
 
     @Resource
-    private MsgClient msgClient;
+    private MsgSyncClient msgClient;
 
     @Test
     public void test1() {
