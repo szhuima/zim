@@ -83,7 +83,7 @@ public class HelloMsgController {
 
             @Override
             public void onCompleted() {
-                System.out.println("onCompleted");
+                log.info("onCompleted");
             }
         };
 
