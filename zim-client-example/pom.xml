@@ -7,41 +7,30 @@
         <groupId>com.szhuima</groupId>
         <artifactId>zim</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>zim-server</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>zim-server-api</module>
-        <module>zim-server-tcp</module>
-        <module>zim-server-websocket</module>
-    </modules>
+    <artifactId>zim-client-example</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.szhuima</groupId>
-            <artifactId>zim-api</artifactId>
-            <version>${revision}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>net.devh</groupId>
-            <artifactId>grpc-server-spring-boot-starter</artifactId>
+            <groupId>com.szhuima</groupId>
+            <artifactId>zim-client</artifactId>
+            <version>${revision}</version>
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
-
-
 
 </project>

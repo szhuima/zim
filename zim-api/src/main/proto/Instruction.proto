@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.szhuima.zim.api.proto.instruction";
+option java_multiple_files = false;
+option java_outer_classname = "InstructionProto";
+
+
+enum InstructionType{
+  ACK = 0;
+  HEAR_BEAT = 1;
+}
+
+
+message Instruction {
+  InstructionType type = 1;
+  int64 msgId = 2;
+}
+
+

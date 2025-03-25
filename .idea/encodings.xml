@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-client-example/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-client-example/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/zim-server-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/zim-server-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/zim-server-tcp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/zim-server-tcp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/zim-server-websocket/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-server/zim-server-websocket/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-cs-transport-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-cs-transport-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-cs-transport-grpc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-cs-transport-grpc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-cs-transport-mq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-cs-transport-mq/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-transporter-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-transporter-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-transporter-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-transporter-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-transporter-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zim-transporter/zim-transporter-server/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

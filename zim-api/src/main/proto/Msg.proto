@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+option java_package = "com.szhuima.zim.api.proto.msg";
+option java_multiple_files = false;
+option java_outer_classname = "MsgProto";
+
+
+enum ContentType {
+  TEXT = 0;
+  IMAGE = 1;
+  VIDEO = 2;
+  AUDIO = 3;
+  FILE = 4;
+}
+
+enum MsgType {
+  SINGLE = 0;
+  GROUP = 1;
+}
+
+enum MsgStatus {
+
+  RECEIVED = 0;
+
+  READ = 1;
+
+  RECALLED = 2;
+
+  SENT_FAIL = 3;
+}
+
+
+
+
+message MsgRequest {
+  int64 msgId = 1;
+  MsgType msgType = 2;
+  string content = 3;
+  ContentType contentType = 4;
+  MsgStatus status = 5;
+  string from = 6;
+  string to = 7;
+  int64 sendTime = 8;
+}
+
+enum ResponseCode {
+  /*已发出*/
+  FLUSHED = 0;
+  /*已收到ACK*/
+  ACKED = 1;
+
+  /*没有连接*/
+  NO_CONNECTION = 2;
+
+
+}
+
+message MsgResponse {
+  ResponseCode code = 1;
+  int64 msgId = 2;
+}
+
+service MsgService {
+
+  // 同步发送消息
+  rpc sendMsg (MsgRequest) returns (MsgResponse);
+
+  // 异步发送消息
+  rpc sendMsgAsync (MsgRequest) returns (stream MsgResponse);
+}
+
+
+

@@ -11,7 +11,7 @@ public interface ZimServer {
      * 启动服务
      * @param port 端口号
      */
-    public void start(Integer port);
+    public void start(Integer port) throws InterruptedException;
 
     /**
      * 停止服务
