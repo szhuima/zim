@@ -15,11 +15,6 @@
     <dependencies>
         <dependency>
             <groupId>com.szhuima</groupId>
-            <artifactId>zim-common</artifactId>
-            <version>${revision}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.szhuima</groupId>
             <artifactId>zim-server-api</artifactId>
             <version>${revision}</version>
         </dependency>
