@@ -26,7 +26,7 @@ public class MsgAsyncClientImpl implements MsgAsyncClient {
      * @param msgRequest
      */
     @Override
-    public void sendMsg(MsgProto.MsgRequest msgRequest, StreamObserver<MsgProto.MsgResponse> responseObserver) {
+    public void sendMsgAsync(MsgProto.MsgRequest msgRequest, StreamObserver<MsgProto.MsgResponse> responseObserver) {
         messageService.sendMsgAsync(msgRequest, responseObserver);
     }
 }

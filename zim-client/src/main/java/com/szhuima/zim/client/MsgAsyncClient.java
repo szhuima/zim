@@ -17,7 +17,7 @@ public interface MsgAsyncClient {
      * @param responseObserver
      * @return
      */
-    void sendMsg(MsgProto.MsgRequest msgRequest, StreamObserver<MsgProto.MsgResponse> responseObserver);
+    void sendMsgAsync(MsgProto.MsgRequest msgRequest, StreamObserver<MsgProto.MsgResponse> responseObserver);
 
 
 }

@@ -4,5 +4,12 @@ spring:
 grpc:
   client:
     grpc-server:
+      # 可以写多个地址，使用逗号分割。
       address: 'static://127.0.0.1:7763'
       negotiation-type: plaintext
+      # 表示启用 keep - alive 机制
+      enable-keep-alive: true
+      # 在没有实际 RPC 调用的情况下，也会发送 keep - alive 信号
+      keep-alive-without-calls: true
+      # 默认就是轮训
+      # default-load-balancing-policy: 'round_robin'

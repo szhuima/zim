@@ -87,7 +87,7 @@ public class HelloMsgController {
             }
         };
 
-        msgAsyncClient.sendMsg(msgRequest,responseStreamObserver);
+        msgAsyncClient.sendMsgAsync(msgRequest,responseStreamObserver);
         return "ok;";
     }
 
