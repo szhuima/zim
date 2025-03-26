@@ -4,7 +4,7 @@ import com.szhuima.zim.api.proto.msg.MsgProto;
 import com.szhuima.zim.api.proto.msg.MsgServiceGrpc;
 import com.szhuima.zim.api.util.WrappedStreamObserver;
 import com.szhuima.zim.server.api.util.FlushMsgRetryUtil;
-import com.szhuima.zim.server.websocket.context.UserContext;
+import com.szhuima.zim.server.websocket.context.UserStatusContext;
 import io.grpc.stub.StreamObserver;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.*;
@@ -36,7 +36,7 @@ public class MsgServiceImpl extends MsgServiceGrpc.MsgServiceImplBase {
         MsgProto.MsgResponse.Builder responseBuilder = MsgProto.MsgResponse.newBuilder();
 
         String requestTo = request.getTo();
-        ChannelHandlerContext ctx = UserContext.getChannel(requestTo);
+        ChannelHandlerContext ctx = UserStatusContext.getChannel(requestTo);
         if (ctx == null) {
             responseBuilder.setCode(MsgProto.ResponseCode.NO_CONNECTION);
             responseObserver.onNext(responseBuilder.build());
@@ -67,7 +67,7 @@ public class MsgServiceImpl extends MsgServiceGrpc.MsgServiceImplBase {
         WrappedStreamObserver<MsgProto.MsgResponse> wrappedObserver = new WrappedStreamObserver<>(responseObserver);
 
         String requestTo = request.getTo();
-        ChannelHandlerContext ctx = UserContext.getChannel(requestTo);
+        ChannelHandlerContext ctx = UserStatusContext.getChannel(requestTo);
         if (ctx == null) {
             responseBuilder.setCode(MsgProto.ResponseCode.NO_CONNECTION);
             wrappedObserver.onNext(responseBuilder.build());

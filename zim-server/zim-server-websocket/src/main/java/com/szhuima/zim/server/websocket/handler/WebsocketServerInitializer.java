@@ -2,10 +2,7 @@ package com.szhuima.zim.server.websocket.handler;
 
 import com.szhuima.zim.server.websocket.handler.codec.MsgRequestEncoder;
 import com.szhuima.zim.server.websocket.handler.codec.WebsocketDecoder;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelPipeline;
+import io.netty.channel.*;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
@@ -18,6 +15,14 @@ import io.netty.handler.stream.ChunkedWriteHandler;
  * * @Description
  **/
 public class WebsocketServerInitializer extends ChannelInitializer<SocketChannel> {
+
+
+    private static final MsgRequestEncoder MSG_REQUEST_ENCODER = new MsgRequestEncoder();
+
+    private static final WebsocketDecoder WEBSOCKET_DECODER = new WebsocketDecoder();
+
+    private static final FilterInboundHandler FILTER_INBOUND_HANDLER = new FilterInboundHandler();
+
 
 
     /**
@@ -35,10 +40,10 @@ public class WebsocketServerInitializer extends ChannelInitializer<SocketChannel
         pipeline.addLast(new HttpServerCodec());
         pipeline.addLast(new ChunkedWriteHandler());
         pipeline.addLast(new HttpObjectAggregator(65535));
-        pipeline.addLast(new MsgRequestEncoder());
+        pipeline.addLast(MSG_REQUEST_ENCODER);
         pipeline.addLast(new WebSocketServerProtocolHandler("/ws"));
-        pipeline.addLast(new WebsocketDecoder());
-        pipeline.addLast(new FilterInboundHandler());
+        pipeline.addLast(WEBSOCKET_DECODER);
+        pipeline.addLast(FILTER_INBOUND_HANDLER);
         pipeline.addLast(new InstructionInboundHandler());
     }
 }

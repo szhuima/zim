@@ -3,6 +3,8 @@ package com.szhuima.zim.server.websocket.server;
 import com.szhuima.zim.server.api.ZimServer;
 import com.szhuima.zim.server.websocket.handler.WebsocketServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.UnpooledByteBufAllocator;
+import io.netty.channel.AdaptiveRecvByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelOption;
@@ -33,10 +35,14 @@ public class WebsocketServer implements ZimServer {
     public void start(Integer port) throws InterruptedException {
         ChannelFuture future = new ServerBootstrap()
                 .group(bossGroup, workerGroup)
+                .option(ChannelOption.SO_BACKLOG, 256) //设置服务器接受连接的队列长度
+                .option(ChannelOption.SO_REUSEADDR, true) //可以复用之前处于TIME_WAIT状态的连接
+                .option(ChannelOption.ALLOCATOR, UnpooledByteBufAllocator.DEFAULT) // ByteBuf 的分配器
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new WebsocketServerInitializer())
-                .childOption(ChannelOption.SO_KEEPALIVE, true)
-                .childOption(ChannelOption.TCP_NODELAY, true)
+                .childOption(ChannelOption.SO_KEEPALIVE, true) // 开启 TCP 的保活机制，一般是两个小时发送探测包
+                .childOption(ChannelOption.TCP_NODELAY, true) // 禁用 Nagle 算法
+                .childOption(ChannelOption.RCVBUF_ALLOCATOR,new AdaptiveRecvByteBufAllocator()) // 可以动态调整接收缓冲区大小
                 .bind(port);
 
         future.syncUninterruptibly();
@@ -51,8 +57,11 @@ public class WebsocketServer implements ZimServer {
      */
     @Override
     public void stop() {
-        bossGroup.shutdownGracefully();
-        workerGroup.shutdownGracefully();
-
+        if (!bossGroup.isShutdown()) {
+            bossGroup.shutdownGracefully();
+        }
+        if (!workerGroup.isShutdown()) {
+            workerGroup.shutdownGracefully();
+        }
     }
 }
