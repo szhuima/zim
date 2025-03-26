@@ -3,6 +3,7 @@ package com.szhuima.zim.server.websocket.server;
 import com.szhuima.zim.server.api.ZimServer;
 import com.szhuima.zim.server.websocket.handler.WebsocketServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.channel.AdaptiveRecvByteBufAllocator;
 import io.netty.channel.ChannelFuture;
@@ -37,7 +38,7 @@ public class WebsocketServer implements ZimServer {
                 .group(bossGroup, workerGroup)
                 .option(ChannelOption.SO_BACKLOG, 256) //设置服务器接受连接的队列长度
                 .option(ChannelOption.SO_REUSEADDR, true) //可以复用之前处于TIME_WAIT状态的连接
-                .option(ChannelOption.ALLOCATOR, UnpooledByteBufAllocator.DEFAULT) // ByteBuf 的分配器
+                .option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT) // ByteBuf 的分配器
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new WebsocketServerInitializer())
                 .childOption(ChannelOption.SO_KEEPALIVE, true) // 开启 TCP 的保活机制，一般是两个小时发送探测包

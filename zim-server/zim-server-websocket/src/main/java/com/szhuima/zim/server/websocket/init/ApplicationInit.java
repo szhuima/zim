@@ -15,11 +15,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApplicationInit implements ApplicationRunner {
 
-    @Value("${websocket.port}")
+    @Value("${zim.server.websocket.port}")
     private int port;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        // 设置内存泄漏检测级别,一共有四种，DISABLED、simple(默认)、advanced、paranoid(最高级别，性能开销大)
+        System.setProperty("io.netty.leakDetection.level", "SIMPLE");
         // 启动ZimServer
         ZimServer server = new WebsocketServer();
         server.start(port);

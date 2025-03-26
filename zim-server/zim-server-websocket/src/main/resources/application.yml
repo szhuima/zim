@@ -9,8 +9,11 @@ grpc:
   server:
     port: 7763
 
-websocket:
-  port: 8899
+zim:
+  server:
+    websocket:
+      port: 8899
+
 logging:
   level:
     root: info
