@@ -1,6 +1,7 @@
 package com.szhuima.zim.server.websocket.handler.codec;
 
 import com.szhuima.zim.api.proto.msg.MsgProto;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageDecoder;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
@@ -13,6 +14,7 @@ import java.util.List;
  * * @Date    2025/3/24 21:40
  * * @Description
  **/
+@ChannelHandler.Sharable
 public class WebsocketDecoder extends MessageToMessageDecoder<WebSocketFrame> {
 
     /**

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.szhuima.zim.api.proto.instruction.InstructionProto;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
@@ -16,6 +17,7 @@ import java.util.List;
  * * @Date    2025/3/24 21:15
  * * @Description
  **/
+@ChannelHandler.Sharable
 public class InstructionEncoder extends MessageToMessageEncoder<InstructionProto.Instruction> {
 
     /**

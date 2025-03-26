@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>2.7.18</spring-boot.version>
         <fastjson_version>2.0.41</fastjson_version>
-        <netty4_version>4.1.25.Final</netty4_version>
+        <netty4_version>4.1.45.Final</netty4_version>
         <commons_lang3_version>3.8.1</commons_lang3_version>
         <grpc.version>1.51.0</grpc.version>
         <grpc-spring-boot-starter.version>2.14.0.RELEASE</grpc-spring-boot-starter.version>
